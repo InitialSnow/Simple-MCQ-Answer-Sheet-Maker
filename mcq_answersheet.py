@@ -16,4 +16,6 @@ while a == True:
     mcq_number = mcq_number+1
     if mcq_limit == mcq_quantity:
         a = False
-print(mcq_answers)
+print("=== Your answers are below! ===")
+for b in mcq_answers:
+    print(b)
