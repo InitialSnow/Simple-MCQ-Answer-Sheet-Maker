@@ -39,13 +39,33 @@ while a == False:
     elif b == '3':
         for c in mcq_answersheet:
             if c == 'a':
-                print(f"{mcq_answersheet_number}. ⬤ Ⓑ Ⓒ Ⓓ")
+                if mcq_answersheet_number < 10:
+                    print(f"{mcq_answersheet_number}.   ⬤ Ⓑ Ⓒ Ⓓ")
+                elif mcq_answersheet_number < 100:
+                    print(f"{mcq_answersheet_number}.  ⬤ Ⓑ Ⓒ Ⓓ")
+                else:
+                    print(f"{mcq_answersheet_number}. ⬤ Ⓑ Ⓒ Ⓓ")
             elif c == 'b':
-                print(f"{mcq_answersheet_number}. Ⓐ ⬤ Ⓒ Ⓓ")
+                if mcq_answersheet_number < 10:
+                    print(f"{mcq_answersheet_number}.   Ⓐ ⬤ Ⓒ Ⓓ")
+                elif mcq_answersheet_number < 100:
+                    print(f"{mcq_answersheet_number}.  Ⓐ ⬤ Ⓒ Ⓓ")
+                else:
+                    print(f"{mcq_answersheet_number}. Ⓐ ⬤ Ⓒ Ⓓ")
             elif c == 'c':
-                print(f"{mcq_answersheet_number}. Ⓐ Ⓑ ⬤ Ⓓ")
+                if mcq_answersheet_number < 10:
+                    print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ ⬤ Ⓓ")
+                elif mcq_answersheet_number < 100:
+                    print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ ⬤ Ⓓ")
+                else:
+                    print(f"{mcq_answersheet_number}. Ⓐ Ⓑ ⬤ Ⓓ")
             else:
-                print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ ⬤")
+                if mcq_answersheet_number < 10:
+                    print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ Ⓒ ⬤")
+                elif mcq_answersheet_number < 100:
+                    print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ ⬤")
+                else:
+                    print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ ⬤")
             mcq_answersheet_number = mcq_answersheet_number + 1
     else : 
         print("Please enter a valid input")
