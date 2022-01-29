@@ -7,6 +7,7 @@ print("Type a command. Input 'help' to get a list of available commands")
 a1 = True
 a2 = True
 a3 = True
+a4 = True
 mcq_mode = 0
 mcq_number = 1
 mcq_answersheet_number = 1
@@ -20,10 +21,21 @@ while a1 == True:
         print('"exit"     : exits the program')
     elif inp == "start":
         print("Please configure your mcq answer sheet")
-        print("How many questions you are going to answer?")
-        inp2 = int(input("> "))
-        print("How many options do you want?")
-        print("   [a] 4          [b] 5")
+        print("=====================================================")
+        print("||    How many questions you are going to answer?  ||")
+        print("=====================================================")
+        while a4 == True:
+            inp2_not_checked = input("> ")
+            try:
+                inp2 = int(inp2_not_checked)
+                break
+            except ValueError:
+                print("Please give a valid input!")
+                continue
+        print("=====================================")
+        print("||  How many options do you want?  ||")
+        print("||   [a] 4          [b] 5          ||")
+        print("=====================================")
         while a2 == True :
             inp3 = input("> ")
             if inp3 == "a" or inp3 == "[a]" or inp3 == "4":
@@ -37,7 +49,8 @@ while a1 == True:
                 continue
         if mcq_mode == 4:
             while mcq_number <= inp2:
-                mcq_answer = input(f"{mcq_number}. ")
+                print("-----------------")
+                mcq_answer = input(f"{mcq_number} ==> ")
                 if mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd':
                     print("Please enter a valid answer!")
                     continue
@@ -91,7 +104,8 @@ while a1 == True:
 
         elif mcq_mode == 5:
             while mcq_number <= inp2:
-                mcq_answer = input(f"{mcq_number}. ")
+                print("-----------------")
+                mcq_answer = input(f"{mcq_number} ==> ")
                 if mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != 'e':
                     print("Please enter a valid answer!")
                     continue
@@ -149,6 +163,12 @@ while a1 == True:
                         print(d)
                 elif inp4 == '3':
                     break
+        mcq_mode = 0
+        mcq_number = 1
+        mcq_answersheet_number = 1
+        mcq_answers = []
+        mcq_answersheet = []
+
     elif inp == "exit" :
         break
     else :
