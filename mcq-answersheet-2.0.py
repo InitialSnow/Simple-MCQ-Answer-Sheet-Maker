@@ -51,21 +51,29 @@ while a1 == True:
             while mcq_number <= inp2:
                 print("-----------------")
                 mcq_answer = input(f"{mcq_number} ==> ")
-                if mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd':
+                if mcq_answer == 'skip':
+                    print("This question has been skipped!")
+                    mcq_answersheet.append(mcq_answer)
+                    mcq_answers.append(f"{mcq_number}. [skipped]")
+                    mcq_number = mcq_number+1
+                    continue
+                elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd':
                     print("Please enter a valid answer!")
                     continue
                 mcq_answersheet.append(mcq_answer)
-                mcq_answers.append(f"{mcq_number}. {mcq_number}")
+                mcq_answers.append(f"{mcq_number}. {mcq_answer}")
                 mcq_number = mcq_number+1
             print("==================================================")
             print("||         Your answers have been recorded!     ||")
             print("==================================================")
             print(">>> Press 1 to get your answers in a mcq answer sheet")
             print(">>> Press 2 to get your answers in a list")
-            print(">>> Press 3 to exit answer mode")
+            print(">>> Press 3 to answer skipped questions")
+            print(">>> Press 4 to exit answer mode")
             while a3 == True:
                 inp4 = input(">> ")
                 if inp4 == "1":
+                    mcq_answersheet_number = 1
                     for c in mcq_answersheet:
                         if c == 'a':
                             if mcq_answersheet_number < 10:
@@ -88,39 +96,70 @@ while a1 == True:
                                 print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ ⬤ Ⓓ")
                             else:
                                 print(f"{mcq_answersheet_number}. Ⓐ Ⓑ ⬤ Ⓓ")
-                        else:
+                        elif c == 'd':
                             if mcq_answersheet_number < 10:
                                 print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ Ⓒ ⬤")
                             elif mcq_answersheet_number < 100:
                                 print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ ⬤")
                             else:
                                 print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ ⬤")
+                        else:
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   [skipped]")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  [skipped]")
+                            else:
+                                print(f"{mcq_answersheet_number}. [skipped]")
                         mcq_answersheet_number = mcq_answersheet_number + 1
                 elif inp4 == '2':
                     for d in mcq_answers:
                         print(d)
                 elif inp4 == '3':
+                    mcq_number000 = 0
+                    for z in mcq_answersheet:
+                        mcq_number000 = mcq_number000+1
+                        if z == "skip":
+                            mcq_answer = input(f"{mcq_number000}. ")
+                            if mcq_answer == 'skip':
+                                print("This question has been skipped!")
+                                mcq_answers[mcq_number000-1] = f"{mcq_number000}. skipped"
+                                mcq_answersheet[mcq_number000-1] = mcq_answer
+                                continue
+                            elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd':
+                                print("Please enter a valid answer!")
+                                continue
+                            mcq_answers[mcq_number000-1] = f"{mcq_number000}. {mcq_answer}"
+                            mcq_answersheet[mcq_number000-1] = mcq_answer
+                elif inp4 == '4':
                     break
 
         elif mcq_mode == 5:
             while mcq_number <= inp2:
                 print("-----------------")
                 mcq_answer = input(f"{mcq_number} ==> ")
-                if mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != 'e':
+                if mcq_answer == 'skip':
+                    print("This question has been skipped!")
+                    mcq_answersheet.append(mcq_answer)
+                    mcq_answers.append(f"{mcq_number}. [skipped]")
+                    mcq_number = mcq_number+1
+                    continue
+                elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != 'e':
                     print("Please enter a valid answer!")
                     continue
                 mcq_answersheet.append(mcq_answer)
-                mcq_answers.append(f"{mcq_number}. {mcq_number}")
+                mcq_answers.append(f"{mcq_number}. {mcq_answer}")
                 mcq_number = mcq_number+1
             print("==================================================")
             print("||         Your answers have been recorded!     ||")
             print("==================================================")
             print(">>> Press 1 to get your answers in a mcq answer sheet")
             print(">>> Press 2 to get your answers in a list")
-            print(">>> Press 3 to exit answer mode")
+            print(">>> Press 3 to answer skipped questions")
+            print(">>> Press 4 to exit answer mode")
             while a3 == True:
                 inp4 = input(">> ")
                 if inp4 == "1":
+                    mcq_answersheet_number = 1
                     for c in mcq_answersheet:
                         if c == 'a':
                             if mcq_answersheet_number < 10:
@@ -150,18 +189,41 @@ while a1 == True:
                                 print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ ⬤ Ⓔ")
                             else:
                                 print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ ⬤ Ⓔ")
-                        else:
+                        elif c == 'e':
                             if mcq_answersheet_number < 10:
                                 print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ Ⓒ Ⓓ ⬤")
                             elif mcq_answersheet_number < 100:
                                 print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ Ⓓ ⬤")
                             else:
                                 print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ Ⓓ ⬤")
+                        else:
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   [skipped]")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  [skipped]")
+                            else:
+                                print(f"{mcq_answersheet_number}. [skipped]")
                         mcq_answersheet_number = mcq_answersheet_number + 1
                 elif inp4 == '2':
                     for d in mcq_answers:
                         print(d)
                 elif inp4 == '3':
+                    mcq_number000 = 0
+                    for z in mcq_answersheet:
+                        mcq_number000 = mcq_number000+1
+                        if z == "skip":
+                            mcq_answer = input(f"{mcq_number000}. ")
+                            if mcq_answer == 'skip':
+                                print("This question has been skipped!")
+                                mcq_answers[mcq_number000-1] = f"{mcq_number000}. skipped"
+                                mcq_answersheet[mcq_number000-1] = mcq_answer
+                                continue
+                            elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != 'e':
+                                print("Please enter a valid answer!")
+                                continue
+                            mcq_answers[mcq_number000-1] = f"{mcq_number000}. {mcq_answer}"
+                            mcq_answersheet[mcq_number000-1] = mcq_answer
+                elif inp4 == '4':
                     break
         mcq_mode = 0
         mcq_number = 1
