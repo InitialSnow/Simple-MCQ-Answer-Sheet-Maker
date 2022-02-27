@@ -57,7 +57,7 @@ while a1 == True:
                     mcq_answers.append(f"{mcq_number}. [skipped]")
                     mcq_number = mcq_number+1
                     continue
-                elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd':
+                elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != '!a' and mcq_answer != '!b' and mcq_answer != '!c' and mcq_answer != '!d' and mcq_answer != '!e':
                     print("Please enter a valid answer!")
                     continue
                 mcq_answersheet.append(mcq_answer)
@@ -103,6 +103,41 @@ while a1 == True:
                                 print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ ⬤")
                             else:
                                 print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ ⬤")
+                        elif c == '!a':
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   ⬤ Ⓑ Ⓒ Ⓓ Ⓔ")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  ⬤ Ⓑ Ⓒ Ⓓ Ⓔ")
+                            else:
+                                print(f"{mcq_answersheet_number}. ⬤ Ⓑ Ⓒ Ⓓ Ⓔ")
+                        elif c == '!b':
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   Ⓐ ⬤ Ⓒ Ⓓ Ⓔ")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  Ⓐ ⬤ Ⓒ Ⓓ Ⓔ")
+                            else:
+                                print(f"{mcq_answersheet_number}. Ⓐ ⬤ Ⓒ Ⓓ Ⓔ")
+                        elif c == '!c':
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ ⬤ Ⓓ Ⓔ")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ ⬤ Ⓓ Ⓔ")
+                            else:
+                                print(f"{mcq_answersheet_number}. Ⓐ Ⓑ ⬤ Ⓓ Ⓔ")
+                        elif c == '!d':
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ Ⓒ ⬤ Ⓔ")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ ⬤ Ⓔ")
+                            else:
+                                print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ ⬤ Ⓔ")
+                        elif c=='!e':
+                            if mcq_answersheet_number < 10:
+                                print(f"{mcq_answersheet_number}.   Ⓐ Ⓑ Ⓒ Ⓓ ⬤")
+                            elif mcq_answersheet_number < 100:
+                                print(f"{mcq_answersheet_number}.  Ⓐ Ⓑ Ⓒ Ⓓ ⬤")
+                            else:
+                                print(f"{mcq_answersheet_number}. Ⓐ Ⓑ Ⓒ Ⓓ ⬤")
                         else:
                             if mcq_answersheet_number < 10:
                                 print(f"{mcq_answersheet_number}.   [skipped]")
