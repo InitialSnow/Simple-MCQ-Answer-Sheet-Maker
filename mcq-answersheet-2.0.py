@@ -57,6 +57,11 @@ while a1 == True:
                     mcq_answers.append(f"{mcq_number}. [skipped]")
                     mcq_number = mcq_number+1
                     continue
+                elif mcq_answer == 'correct':
+                    mcq_answersheet.pop()
+                    mcq_answers.pop()
+                    mcq_number = mcq_number-1
+                    continue
                 elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != '!a' and mcq_answer != '!b' and mcq_answer != '!c' and mcq_answer != '!d' and mcq_answer != '!e':
                     print("Please enter a valid answer!")
                     continue
@@ -177,6 +182,11 @@ while a1 == True:
                     mcq_answersheet.append(mcq_answer)
                     mcq_answers.append(f"{mcq_number}. [skipped]")
                     mcq_number = mcq_number+1
+                    continue
+                elif mcq_answer == 'correct':
+                    mcq_answersheet.pop()
+                    mcq_answers.pop()
+                    mcq_number = mcq_number-1
                     continue
                 elif mcq_answer != 'a' and mcq_answer != 'b' and mcq_answer != 'c' and mcq_answer != 'd' and mcq_answer != 'e':
                     print("Please enter a valid answer!")
